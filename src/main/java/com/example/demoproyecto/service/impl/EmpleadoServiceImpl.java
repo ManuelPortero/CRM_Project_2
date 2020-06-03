@@ -5,17 +5,17 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
 import com.example.demoproyecto.commons.GenericServiceImpl;
-import com.example.demoproyecto.model.Empleado;
-import com.example.demoproyecto.service.api.EmpleadoServiceAPI;
-import com.example.demoproyecto.dao.api.EmpleadoDaoAPI;
+import com.example.demoproyecto.model.Employee;
+import com.example.demoproyecto.service.api.EmployeeServiceAPI;
+import com.example.demoproyecto.dao.api.EmployeeDaoAPI;
 
 @Service
-public class EmpleadoServiceImpl extends GenericServiceImpl <Empleado, Long> implements EmpleadoServiceAPI {
+public class EmpleadoServiceImpl extends GenericServiceImpl <Employee, Long> implements EmployeeServiceAPI {
 	@Autowired
-	private EmpleadoDaoAPI empleadoDaoAPI; 
+	private EmployeeDaoAPI empleadoDaoAPI; 
 	
 	@Override
-	public CrudRepository<Empleado, Long> getDao() {
+	public CrudRepository<Employee, Long> getDao() {
 		// TODO Auto-generated method stub
 		return empleadoDaoAPI;
 	}

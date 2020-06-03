@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demoproyecto.model.Empleado;
-import com.example.demoproyecto.service.api.EmpleadoServiceAPI;
+import com.example.demoproyecto.model.Employee;
+import com.example.demoproyecto.service.api.EmployeeServiceAPI;
 @RestController
 @RequestMapping(value="/api/v1/")
 @CrossOrigin("*")
 
 @Controller
-public class EmpleadoController {
+public class EmployeeController {
 
  @Autowired
- private EmpleadoServiceAPI empleadoServiceAPI; 
+ private EmployeeServiceAPI empleadoServiceAPI; 
 	
  @RequestMapping("/")
  public String index(Model model) {
@@ -33,14 +33,14 @@ public class EmpleadoController {
 	 if(id != null) {
 		 model.addAttribute("empleado", empleadoServiceAPI.get(id));
 	 }else {
-		 model.addAttribute("empleado", new Empleado());
+		 model.addAttribute("empleado", new Employee());
 	 }
 	 return "save"; 
 	 
   }
  
  @PostMapping("/save")
- public String save(Empleado empleado, Model model) {
+ public String save(Employee empleado, Model model) {
 	 empleadoServiceAPI.save(empleado);
 	 return "redirect:/";
 	 

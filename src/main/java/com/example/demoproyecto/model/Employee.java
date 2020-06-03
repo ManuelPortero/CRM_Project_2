@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 
 @Entity
-public class Empleado {
+public class Employee {
  
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
