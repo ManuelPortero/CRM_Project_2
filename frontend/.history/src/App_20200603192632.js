@@ -210,13 +210,7 @@ export default class App extends Component{
         Position : this.state.selectedEmpleado.Position,
         UserLogin : this.state.selectedEmpleado.UserLogin,
         Pass : this.state.selectedEmpleado.Pass
-      },
-      task: {
-        id: this.state.selectedEmpleado.id,
-        Name: this.state.selectedEmpleado.Name,
-        Description: this.state.selectedEmpleado.Description,
       }
-      
     })
   }
 }

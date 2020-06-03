@@ -82,12 +82,7 @@ export default class App extends Component{
           Position: null,
           UserLogin : null,
           Pass: null
-          },task: {
-            id: null,
-            Name: null,
-            Description: null,
           }
-          
       });
       this.growl.show({severity: 'success', summary: 'Atención!', detail: 'Se guardó el registro correctamente.'});
       this.empleadoService.getAll().then(data => this.setState({empleados: data}))
@@ -188,13 +183,7 @@ export default class App extends Component{
         Position: null,
         UserLogin : null,
         Pass: null
-      },
-      task: {
-        id: null,
-        Name: null,
-        Description: null,
       }
-      
     });
     document.getElementById('empleado-form').reset();
   }
@@ -210,13 +199,7 @@ export default class App extends Component{
         Position : this.state.selectedEmpleado.Position,
         UserLogin : this.state.selectedEmpleado.UserLogin,
         Pass : this.state.selectedEmpleado.Pass
-      },
-      task: {
-        id: this.state.selectedEmpleado.id,
-        Name: this.state.selectedEmpleado.Name,
-        Description: this.state.selectedEmpleado.Description,
       }
-      
     })
   }
 }

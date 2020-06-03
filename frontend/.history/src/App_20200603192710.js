@@ -215,7 +215,7 @@ export default class App extends Component{
         id: this.state.selectedEmpleado.id,
         Name: this.state.selectedEmpleado.Name,
         Description: this.state.selectedEmpleado.Description,
-      }
+      },
       
     })
   }

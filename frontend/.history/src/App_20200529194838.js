@@ -22,19 +22,11 @@ export default class App extends Component{
       visible : false,
       empleado: {
         id: null,
-        Dni: null,
-        Name: null,
-        Surname: null,
-        Position: null,
-        UserLogin : null,
-        Pass: null
+        nombre: null,
+        apellido: null,
+        direccion: null,
+        telefono : null
       },
-      task: {
-        id: null,
-        Name: null,
-        Description: null,
-      },
-      
       selectedEmpleado : {
 
       }
@@ -76,18 +68,11 @@ export default class App extends Component{
         visible : false,
         empleado: {
           id: null,
-          Dni: null,
-          Name: null,
-          Surname: null,
-          Position: null,
-          UserLogin : null,
-          Pass: null
-          },task: {
-            id: null,
-            Name: null,
-            Description: null,
-          }
-          
+          nombre: null,
+          apellido: null,
+          direccion: null,
+          telefono : null
+        }
       });
       this.growl.show({severity: 'success', summary: 'Atención!', detail: 'Se guardó el registro correctamente.'});
       this.empleadoService.getAll().then(data => this.setState({empleados: data}))
@@ -182,19 +167,11 @@ export default class App extends Component{
       visible : true,
       empleado : {
         id: null,
-        Dni: null,
-        Name: null,
-        Surname: null,
-        Position: null,
-        UserLogin : null,
-        Pass: null
-      },
-      task: {
-        id: null,
-        Name: null,
-        Description: null,
+        nombre: null,
+        apellido: null,
+        direccion: null,
+        telefono : null
       }
-      
     });
     document.getElementById('empleado-form').reset();
   }
@@ -204,19 +181,11 @@ export default class App extends Component{
       visible : true,
       empleado : {
         id: this.state.selectedEmpleado.id,
-        Dni: this.state.selectedEmpleado.Dni,
-        Name: this.state.selectedEmpleado.Name,
-        Surname: this.state.selectedEmpleado.Surname,
-        Position : this.state.selectedEmpleado.Position,
-        UserLogin : this.state.selectedEmpleado.UserLogin,
-        Pass : this.state.selectedEmpleado.Pass
-      },
-      task: {
-        id: this.state.selectedEmpleado.id,
-        Name: this.state.selectedEmpleado.Name,
-        Description: this.state.selectedEmpleado.Description,
+        nombre: this.state.selectedEmpleado.nombre,
+        apellido: this.state.selectedEmpleado.apellido,
+        direccion: this.state.selectedEmpleado.direccion,
+        telefono : this.state.selectedEmpleado.telefono
       }
-      
     })
   }
 }
