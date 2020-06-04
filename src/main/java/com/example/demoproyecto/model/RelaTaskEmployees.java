@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity
 public class RelaTaskEmployees {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

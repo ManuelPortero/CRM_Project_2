@@ -17,7 +17,7 @@ import com.example.demoproyecto.service.api.RelaRoleEmployeeServiceApi;
 import com.example.demoproyecto.service.api.RelaTaskEmployeesServiceApi;
 
 @RestController
-@RequestMapping(value="/api/v4/")
+@RequestMapping(value="/api/v6/")
 @CrossOrigin("*")
 
 @Controller

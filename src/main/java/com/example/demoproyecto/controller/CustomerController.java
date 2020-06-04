@@ -17,7 +17,6 @@ import com.example.demoproyecto.service.api.CustomerServiceAPI;
 @RequestMapping(value="/api/v2/")
 @CrossOrigin("*")
 
-@Controller
 public class CustomerController {
 
 	@Autowired

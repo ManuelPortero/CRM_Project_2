@@ -14,7 +14,7 @@ import com.example.demoproyecto.model.Role;
 import com.example.demoproyecto.service.api.RoleServiceApi;
 
 @RestController
-@RequestMapping(value="/api/v5/")
+@RequestMapping(value="/api/v7/")
 @CrossOrigin("*")
 
 @Controller
