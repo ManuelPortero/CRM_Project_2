@@ -22,6 +22,15 @@ public class Employee {
 	@Column 
 	private String Apellido; 
 	
+	@Column
+	private String Cargo;
+	
+	@Column 
+	private String UserLogin;
+	
+	@Column
+	private String Pass;
+	
 	public Long getId() {
 		return Id;
 	}
@@ -61,8 +70,23 @@ public class Employee {
 		Cargo = cargo;
 	}
 
-	@Column 
-	private String Cargo;
+	public String getUserLogin() {
+		return UserLogin;
+	}
+
+	public void setUserLogin(String userLogin) {
+		UserLogin = userLogin;
+	}
+
+	public String getPass() {
+		return Pass;
+	}
+
+	public void setPass(String pass) {
+		Pass = pass;
+	}
+
+	
 	
 	
 }

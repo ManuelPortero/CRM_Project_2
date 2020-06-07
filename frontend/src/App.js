@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { EmpleadoService } from './service/EmpleadoService';
+import { EmpleadoService } from './service/PersonaService';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import {Panel} from 'primereact/panel';
@@ -22,10 +22,12 @@ export default class App extends Component{
       visible : false,
       empleado: {
         id: null,
+        dni: null,
         nombre: null,
         apellido: null,
-        direccion: null,
-        telefono : null
+        cargo: null,
+        userLogin : null,
+        pass: null
       },
       selectedEmpleado : {
 
@@ -59,7 +61,7 @@ export default class App extends Component{
   }
 
   componentDidMount(){
-    this.empleadoService.getAll().then(data => this.setState({empleados: data}))
+    this.empleadoService.getAll().then(data => this.setState({empleado: data}))
   }
 
   save() {
@@ -68,10 +70,12 @@ export default class App extends Component{
         visible : false,
         empleado: {
           id: null,
+          dni: null,
           nombre: null,
           apellido: null,
-          direccion: null,
-          telefono : null
+          cargo: null,
+          userLogin : null,
+          pass: null
         }
       });
       this.growl.show({severity: 'success', summary: 'Atención!', detail: 'Se guardó el registro correctamente.'});
@@ -94,12 +98,13 @@ export default class App extends Component{
         <Menubar model={this.items}/>
         <br/>
         <Panel header="React CRUD App">
-            <DataTable value={this.state.empleados} paginator={true} rows="4" selectionMode="single" selection={this.state.selectedEmpleado} onSelectionChange={e => this.setState({selectedEmpleado: e.value})}>
+            <DataTable value={this.state.empleados} paginator={true} rows={4} selectionMode="single" selection={this.state.selectedEmpleado} onSelectionChange={e => this.setState({selectedEmpleado: e.value})}>
               <Column field="id" header="ID"></Column>
+              <Column field="dni" header="Dni"></Column>
               <Column field="nombre" header="Nombre"></Column>
               <Column field="apellido" header="Apellido"></Column>
-              <Column field="direccion" header="Direccion"></Column>
-              <Column field="telefono" header="Teléfono"></Column>
+              <Column field="cargo" header="Cargo"></Column>
+              <Column field="userLogin" header="User Login"></Column>             
             </DataTable>
         </Panel>
         <Dialog header="Crear empleado" visible={this.state.visible} style={{width: '400px'}} footer={this.footer} modal={true} onHide={() => this.setState({visible: false})}>
@@ -167,10 +172,12 @@ export default class App extends Component{
       visible : true,
       empleado : {
         id: null,
+        dni: null,
         nombre: null,
         apellido: null,
-        direccion: null,
-        telefono : null
+        cargo: null,
+        userLogin : null,
+        pass: null
       }
     });
     document.getElementById('empleado-form').reset();
@@ -181,6 +188,7 @@ export default class App extends Component{
       visible : true,
       empleado : {
         id: this.state.selectedEmpleado.id,
+        dni: this.state.selectedEmpleado.id,
         nombre: this.state.selectedEmpleado.nombre,
         apellido: this.state.selectedEmpleado.apellido,
         direccion: this.state.selectedEmpleado.direccion,
