@@ -159,3 +159,4 @@ class Customer extends Component{
     
     }
 }
+export default Customer;
