@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { EmpleadoService } from '../service/PersonaService';
+import { EmpleadoService } from '../service/EmpleadoService';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import {Panel} from 'primereact/panel';
@@ -12,6 +12,7 @@ import {Growl} from 'primereact/growl';
 import 'primereact/resources/themes/nova-light/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
+
 
 class Empleado extends Component{
     constructor(){

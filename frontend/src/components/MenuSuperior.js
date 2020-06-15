@@ -139,9 +139,9 @@ class MenuSuperior extends Component{
         }
      ];
     }
-    empleados(){
-       <Empleado/>
-    }
+   //  empleados(){
+   //     <Empleado/>
+   //  }
     render(){
         return(   
         <div className="navbar navbar-dark bg-dark">   
