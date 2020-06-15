@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Menubar} from 'primereact/menubar';
+import Empleado from './Empleado';
 
 class MenuSuperior extends Component{
 
@@ -19,8 +20,8 @@ class MenuSuperior extends Component{
                     {
                        label:'Empleado',
                        icon:'pi pi-fw pi-bookmark',
-                       command: (event) => {
-                           console.log(event);
+                       command: (onClick) => {
+                           {this.empleados()}
                         // event.originalEvent: Browser event
                         // event.item: MenuItem instance
                         }
@@ -82,7 +83,7 @@ class MenuSuperior extends Component{
                 label:'Nuevo',
                 icon:'pi pi-fw pi-plus',
                 command: (event) => {
-                    console.log(event);
+                  
                 // event.originalEvent: Browser event
                 // event.item: MenuItem instance
                 }    
@@ -138,7 +139,9 @@ class MenuSuperior extends Component{
         }
      ];
     }
-    
+    empleados(){
+       <Empleado/>
+    }
     render(){
         return(   
         <div className="navbar navbar-dark bg-dark">   
