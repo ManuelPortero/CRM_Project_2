@@ -7,6 +7,7 @@ import 'primereact/resources/themes/nova-light/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 
+
 class App extends Component{
  render(){
    return(
@@ -16,6 +17,7 @@ class App extends Component{
       <div className="card-body" style={{backgroundColor:'transparent'}}>
 
       </div>
+
       </div>
    );
  
@@ -23,3 +25,5 @@ class App extends Component{
    
 }
 export default App;
+
+  
