@@ -8,7 +8,4 @@ export class TaskService{
     save(task) {
         return axios.post(this.baseUrl +"save", task).then(res => res.data); 
     }
-    delete(id) {
-        return axios.get(this.baseUrl + "delete/"+id).then(res => res.data);
-    }
 }
