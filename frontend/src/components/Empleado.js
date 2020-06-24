@@ -109,7 +109,7 @@ export default class App extends Component{
         <Menubar model={this.items}/>
         <br/>
         <Panel header="React CRUD App">
-            <DataTable value={this.state.empleados} paginator={true} rows="4" selectionMode="single" selection={this.state.selectedEmpleado} onSelectionChange={e => this.setState({selectedEmpleado: e.value})}>
+            <DataTable value={this.state.empleados} paginator={true} selectionMode="single" selection={this.state.selectedEmpleado} onSelectionChange={e => this.setState({selectedEmpleado: e.value})}>
               <Column field="id" header="ID"></Column>
               <Column field="nombre" header="Nombre"></Column>
               <Column field="apellido" header="Apellido"></Column>

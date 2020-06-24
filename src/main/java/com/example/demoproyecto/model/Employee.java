@@ -5,85 +5,87 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 
+@CrossOrigin("*")
 @Entity
 public class Employee {
  
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long Id;
+	private Long id;
 		
 	@Column
-	private String Dni;
+	private String dni;
 	
 	@Column 
-	private String Nombre;
+	private String name;
 	
 	@Column 
-	private String Apellido; 
+	private String surname; 
 	
 	@Column
-	private String Cargo;
+	private String position;
 	
 	@Column 
-	private String UserLogin;
+	private String userlogin;
 	
 	@Column
-	private String Pass;
+	private String pass;
 	
 	public Long getId() {
-		return Id;
+		return id;
 	}
 
-	public void setId(Long id) {
-		Id = id;
+	public void setId(Long idp) {
+		id = idp;
 	}
 
 	public String getDni() {
-		return Dni;
+		return dni;
 	}
-	public void setDni(String dni) {
-		Dni=dni; 
+	public void setDni(String dni1) {
+		dni=dni1; 
 	}
 	
 	public String getNombre() {
-		return Nombre;
+		return name;
 	}
 
 	public void setNombre(String nombre) {
-		Nombre = nombre;
+		name = nombre;
 	}
 
 	public String getApellido() {
-		return Apellido;
+		return surname;
 	}
 
 	public void setApellido(String apellido) {
-		Apellido = apellido;
+		surname = apellido;
 	}
 
 	public String getCargo() {
-		return Cargo;
+		return position;
 	}
 
 	public void setCargo(String cargo) {
-		Cargo = cargo;
+		position = cargo;
 	}
 
 	public String getUserLogin() {
-		return UserLogin;
+		return userlogin;
 	}
 
 	public void setUserLogin(String userLogin) {
-		UserLogin = userLogin;
+		userlogin = userLogin;
 	}
 
 	public String getPass() {
-		return Pass;
+		return pass;
 	}
 
-	public void setPass(String pass) {
-		Pass = pass;
+	public void setPass(String pass1) {
+		pass = pass1;
 	}
 
 	
