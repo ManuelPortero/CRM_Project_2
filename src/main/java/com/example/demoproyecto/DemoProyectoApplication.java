@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-package com.example.demoproyecto;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
-public class DemoProyectoApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(DemoProyectoApplication.class, args);
-	}
-
-}
-=======
 package com.example.demoproyecto;
 
 import org.springframework.boot.SpringApplication;
@@ -32,4 +17,3 @@ public class DemoProyectoApplication {
 	}
 
 }
->>>>>>> 6c523bf68ab2fa370fe49b302acfdc90dfb0e099
