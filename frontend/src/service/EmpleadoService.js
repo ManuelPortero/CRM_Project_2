@@ -16,7 +16,7 @@ export class EmpleadoService{
     }
     save(empleado) {             
          if(empleado.id===null){empleado.id=Math.floor(Math.random()*10000); }        
-        return axios.post(this.baseUrl + "save", empleado).then(res => res.data); 
+        return axios.put(this.baseUrl + "save", empleado).then(res => res.data); 
     }
     delete(id) {
         return axios.get(this.baseUrl + "delete/"+id).then(res => res.data);

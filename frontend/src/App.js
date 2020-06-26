@@ -151,8 +151,7 @@ export default class App extends Component{
           roles: {
             id: null,
             NameRole: null
-          }
-          
+          }          
       });
       this.growl.show({severity: 'success', summary: 'Atención!', detail: 'Se guardó el registro correctamente.'});
       this.empleadoService.getAll().then(data => this.setState({empleados: data}))
@@ -275,9 +274,7 @@ export default class App extends Component{
       roles: {
         id: null,
         NameRole: null
-      }
-     
-      
+      }      
     });
     //document.getElementById('empleado-form').reset();
   }
@@ -311,8 +308,8 @@ export default class App extends Component{
       roles: {
         id: null,
         NameRole: null
-      }
-      
+
+      }      
     })
   }
 }
