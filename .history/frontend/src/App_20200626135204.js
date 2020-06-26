@@ -34,19 +34,10 @@ export default class App extends Component{
         Name: null,
         Description: null,
       },
-      
-      customer: {
+      Customer: {
         id: null,
-        IdCustomer: null,
         Name: null,
-        Surname: null,
-        Company: null,
-        Adress: null,
-        City: null
-      },
-      roles: {
-        id: null,
-        NameRole: null
+        Description: null,
       },
       
       selectedEmpleado : {
@@ -100,19 +91,6 @@ export default class App extends Component{
             id: null,
             Name: null,
             Description: null,
-          },
-          customer: {
-            id: null,
-            IdCustomer: null,
-            Name: null,
-            Surname: null,
-            Company: null,
-            Adress: null,
-            City: null
-          },
-          roles: {
-            id: null,
-            NameRole: null
           }
           
       });
@@ -220,19 +198,6 @@ export default class App extends Component{
         id: null,
         Name: null,
         Description: null,
-      },
-      customer: {
-        id: null,
-        IdCustomer: null,
-        Name: null,
-        Surname: null,
-        Company: null,
-        Adress: null,
-        City: null
-      },
-      roles: {
-        id: null,
-        NameRole: null
       }
       
     });
@@ -255,19 +220,6 @@ export default class App extends Component{
         id: this.state.selectedEmpleado.id,
         Name: this.state.selectedEmpleado.Name,
         Description: this.state.selectedEmpleado.Description,
-      }, 
-      customer: {
-        id: null,
-        IdCustomer: null,
-        Name: null,
-        Surname: null,
-        Company: null,
-        Adress: null,
-        City: null
-      },
-      roles: {
-        id: null,
-        NameRole: null
       }
       
     })

@@ -44,10 +44,6 @@ export default class App extends Component{
         Adress: null,
         City: null
       },
-      roles: {
-        id: null,
-        NameRole: null
-      },
       
       selectedEmpleado : {
 
@@ -109,10 +105,6 @@ export default class App extends Component{
             Company: null,
             Adress: null,
             City: null
-          },
-          roles: {
-            id: null,
-            NameRole: null
           }
           
       });
@@ -229,10 +221,6 @@ export default class App extends Component{
         Company: null,
         Adress: null,
         City: null
-      },
-      roles: {
-        id: null,
-        NameRole: null
       }
       
     });
@@ -264,10 +252,6 @@ export default class App extends Component{
         Company: null,
         Adress: null,
         City: null
-      },
-      roles: {
-        id: null,
-        NameRole: null
       }
       
     })

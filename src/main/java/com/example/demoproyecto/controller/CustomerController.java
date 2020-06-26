@@ -1,30 +1,23 @@
 package com.example.demoproyecto.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demoproyecto.model.Customer;
-import com.example.demoproyecto.service.api.CustomerServiceAPI;
+import com.example.demoproyecto.model.Empleado;
+import com.example.demoproyecto.service.api.CustomerServiceApi;
 
-@RestController
-@RequestMapping(value="/api/v2/")
-@CrossOrigin("*")
-
-@Controller
 public class CustomerController {
 
 	@Autowired
-	private CustomerServiceAPI customerServiceApi;
+	private CustomerServiceApi customerServiceApi;
 	
 	@RequestMapping("/")
-	public String index(Model model) {
+	public String Index(Model model) {
 		model.addAttribute("list",customerServiceApi.getAll());
 		return "index";
 	}
@@ -40,7 +33,7 @@ public class CustomerController {
 	}
 	
 	@PostMapping("/save/id")
-	public String save(Customer customer, Model model) {
+	public String Save(Customer customer, Model model) {
 		customerServiceApi.save(customer);
 		
 		return "redirect:/";
