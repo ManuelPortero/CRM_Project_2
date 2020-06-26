@@ -1,3 +1,6 @@
+
+import MenuSuperior from './components/MenuSuperior';
+
 import React, { Component } from 'react';
 import './App.css';
 import { EmpleadoService } from './service/EmpleadoService';
@@ -15,19 +18,40 @@ import 'primereact/resources/themes/nova-light/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 
+
+// class App extends Component{
+//  render(){
+//    return(
+//       <div className="container-fluid" >              
+//        <MenuSuperior>        
+//         </MenuSuperior>
+//       <div className="card-body" style={{backgroundColor:'transparent'}}>
+
+//       </div>
+
+//       </div>
+//    );
+ 
+//    }
+   
+// }
+
+
+
+
 export default class App extends Component{
   constructor(){
     super();
     this.state = {
       visible : false,
       empleado: {
-        id: null,
-        Dni: null,
-        Name: null,
-        Surname: null,
-        Position: null,
-        UserLogin : null,
-        Pass: null
+        id: '0',
+        Dni: '0',
+        Name: '0',
+        Surname: '0',
+        Position: '0',
+        UserLogin : '0',
+        Pass: '0'
       },
       task: {
         id: null,
@@ -51,8 +75,11 @@ export default class App extends Component{
       
       selectedEmpleado : {
 
-      }
+      },
+      
     };
+
+    
     this.items = [
       {
         label : 'Nuevo',
@@ -78,14 +105,25 @@ export default class App extends Component{
         <Button label="Guardar" icon="pi pi-check" onClick={this.save} />
       </div>
     );
+     this.handleChange = this.handleChange.bind(this);
   }
 
+  handleChange(event) {
+   this.setState({value: event.target.value});
+ }
   componentDidMount(){
+    //fetch("http://localhost:3000")
     this.empleadoService.getAll().then(data => this.setState({empleados: data}))
+   
   }
 
+
+  
   save() {
     this.empleadoService.save(this.state.empleado).then(data => {
+
+   console.log("save");
+   console.log(data);
       this.setState({
         visible : false,
         empleado: {
@@ -135,23 +173,26 @@ export default class App extends Component{
       <div style={{width:'80%', margin: '0 auto', marginTop: '20px'}}>
         <Menubar model={this.items}/>
         <br/>
+        
         <Panel header="React CRUD App">
-            <DataTable value={this.state.empleados} paginator={true} rows="4" selectionMode="single" selection={this.state.selectedEmpleado} onSelectionChange={e => this.setState({selectedEmpleado: e.value})}>
+            <DataTable value={this.state.empleados} paginator={true}  selectionMode="single" selection={this.state.selectedEmpleado} onSelectionChange={e => this.setState({selectedEmpleado: e.value})}>
               <Column field="id" header="ID"></Column>
               <Column field="nombre" header="Nombre"></Column>
               <Column field="apellido" header="Apellido"></Column>
-              <Column field="direccion" header="Direccion"></Column>
-              <Column field="telefono" header="Teléfono"></Column>
+              <Column field="dni" header="Dni"></Column>
+              <Column field="cargo" header="Cargo"></Column>
+              <Column field="userLogin" header="Usuario"></Column>
+              <Column field="pass" header="Contraseña"></Column>
             </DataTable>
         </Panel>
         <Dialog header="Crear empleado" visible={this.state.visible} style={{width: '400px'}} footer={this.footer} modal={true} onHide={() => this.setState({visible: false})}>
             <form id="empleado-form">
               <span className="p-float-label">
-                <InputText value={this.state.empleado.nombre} style={{width : '100%'}} id="nombre" onChange={(e) => {
+                <InputText value={this.state.empleado.Name || ''} style={{width : '100%'}} id="nombre" onChange={(e) => {
                     let val = e.target.value;
                     this.setState(prevState => {
                         let empleado = Object.assign({}, prevState.empleado);
-                        empleado.nombre = val;
+                        empleado.Name = val;
 
                         return { empleado };
                     })}
@@ -160,11 +201,11 @@ export default class App extends Component{
               </span>
               <br/>
               <span className="p-float-label">
-                <InputText value={this.state.empleado.apellido} style={{width : '100%'}} id="apellido" onChange={(e) => {
+                <InputText value={this.state.empleado.Surname || ''} style={{width : '100%'}} id="apellido" onChange={(e) => {
                     let val = e.target.value;
                     this.setState(prevState => {
                         let empleado = Object.assign({}, prevState.empleado);
-                        empleado.apellido = val
+                        empleado.Surname = val
 
                         return { empleado };
                     })}
@@ -173,29 +214,29 @@ export default class App extends Component{
               </span>
               <br/>
               <span className="p-float-label">
-                <InputText value={this.state.empleado.direccion} style={{width : '100%'}} id="direccion" onChange={(e) => {
+                <InputText value={this.state.empleado.Dni || ''} style={{width : '100%'}} id="dni" onChange={(e) => {
                     let val = e.target.value;
                     this.setState(prevState => {
                         let empleado = Object.assign({}, prevState.empleado);
-                        empleado.direccion = val
+                        empleado.Dni = val
 
                         return { empleado };
                     })}
                   } />
-                <label htmlFor="direccion">Dirección</label>
+                <label htmlFor="dni">Dni</label>
               </span>
               <br/>
               <span className="p-float-label">
-                <InputText value={this.state.empleado.telefono} style={{width : '100%'}} id="telefono" onChange={(e) => {
+                <InputText value={this.state.empleado.Position || ''} style={{width : '100%'}} id="cargo" onChange={(e) => {
                     let val = e.target.value;
                     this.setState(prevState => {
                         let empleado = Object.assign({}, prevState.empleado);
-                        empleado.telefono = val
+                        empleado.Position = val
 
                         return { empleado };
                     })}
                   } />
-                <label htmlFor="telefono">Teléfono</label>
+                <label htmlFor="cargo">Cargo</label>
               </span>
             </form>
         </Dialog>
@@ -205,6 +246,7 @@ export default class App extends Component{
   }
 
   showSaveDialog(){
+     alert("showsavedialog");
     this.setState({
       visible : true,
       empleado : {
@@ -215,6 +257,7 @@ export default class App extends Component{
         Position: null,
         UserLogin : null,
         Pass: null
+<<<<<<< HEAD
       },
       task: {
         id: null,
@@ -233,10 +276,18 @@ export default class App extends Component{
       roles: {
         id: null,
         NameRole: null
+=======
+>>>>>>> 6c523bf68ab2fa370fe49b302acfdc90dfb0e099
       }
+      // },
+      // task: {
+      //   id: null,
+      //   Name: null,
+      //   Description: null,
+      // }
       
     });
-    document.getElementById('empleado-form').reset();
+    //document.getElementById('empleado-form').reset();
   }
 
   showEditDialog() {
@@ -273,3 +324,6 @@ export default class App extends Component{
     })
   }
 }
+//export default App;
+
+  
