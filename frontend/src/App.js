@@ -134,6 +134,26 @@ export default class App extends Component{
           Position: null,
           UserLogin : null,
           Pass: null
+<<<<<<< HEAD
+=======
+          },task: {
+            id: null,
+            Name: null,
+            Description: null,
+          },
+          customer: {
+            id: null,
+            IdCustomer: null,
+            Name: null,
+            Surname: null,
+            Company: null,
+            Adress: null,
+            City: null
+          },
+          roles: {
+            id: null,
+            NameRole: null
+>>>>>>> 50c247542fd4f90f2723629de8789aeaf7f0e7fc
           }
           // ,task: {
           //   id: null,
@@ -258,7 +278,26 @@ export default class App extends Component{
         Position: null,
         UserLogin : null,
         Pass: null
+      },
+      task: {
+        id: null,
+        Name: null,
+        Description: null,
+      },
+      customer: {
+        id: null,
+        IdCustomer: null,
+        Name: null,
+        Surname: null,
+        Company: null,
+        Adress: null,
+        City: null
+      },
+      roles: {
+        id: null,
+        NameRole: null
       }
+<<<<<<< HEAD
       // ,
       // task: {
       //   id: null,
@@ -278,6 +317,8 @@ export default class App extends Component{
       //   id: null,
       //   NameRole: null
       // }
+=======
+>>>>>>> 50c247542fd4f90f2723629de8789aeaf7f0e7fc
      
       
     });
@@ -295,6 +336,27 @@ export default class App extends Component{
         Position : this.state.selectedEmpleado.Position,
         UserLogin : this.state.selectedEmpleado.UserLogin,
         Pass : this.state.selectedEmpleado.Pass
+<<<<<<< HEAD
+=======
+      },
+      task: {
+        id: this.state.selectedEmpleado.id,
+        Name: this.state.selectedEmpleado.Name,
+        Description: this.state.selectedEmpleado.Description,
+      }, 
+      customer: {
+        id: null,
+        IdCustomer: null,
+        Name: null,
+        Surname: null,
+        Company: null,
+        Adress: null,
+        City: null
+      },
+      roles: {
+        id: null,
+        NameRole: null
+>>>>>>> 50c247542fd4f90f2723629de8789aeaf7f0e7fc
       }
       // ,
       // task: {
