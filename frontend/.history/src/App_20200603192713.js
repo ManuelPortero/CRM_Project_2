@@ -204,12 +204,12 @@ export default class App extends Component{
       visible : true,
       empleado : {
         id: this.state.selectedEmpleado.id,
-        Dni: this.state.selectedEmpleado.Dni,
-        Name: this.state.selectedEmpleado.Name,
-        Surname: this.state.selectedEmpleado.Surname,
-        Position : this.state.selectedEmpleado.Position,
-        UserLogin : this.state.selectedEmpleado.UserLogin,
-        Pass : this.state.selectedEmpleado.Pass
+        dni: this.state.selectedEmpleado.dni,
+        name: this.state.selectedEmpleado.name,
+        surname: this.state.selectedEmpleado.surname,
+        position : this.state.selectedEmpleado.position,
+        userLogin : this.state.selectedEmpleado.userLogin,
+        pass : this.state.selectedEmpleado.pass
       },
       task: {
         id: this.state.selectedEmpleado.id,

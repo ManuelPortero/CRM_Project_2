@@ -10,10 +10,10 @@ import com.example.demoproyecto.service.api.EmployeeServiceAPI;
 import com.example.demoproyecto.dao.api.EmployeeDaoAPI;
 
 @Service
-public class EmpleadoServiceImpl extends GenericServiceImpl <Employee, Long> implements EmployeeServiceAPI {
+public class EmpleadoServiceImpl extends GenericServiceImpl<Employee, Long> implements EmployeeServiceAPI {
 	@Autowired
-	private EmployeeDaoAPI empleadoDaoAPI; 
-	
+	private EmployeeDaoAPI empleadoDaoAPI;
+
 	@Override
 	public CrudRepository<Employee, Long> getDao() {
 		// TODO Auto-generated method stub

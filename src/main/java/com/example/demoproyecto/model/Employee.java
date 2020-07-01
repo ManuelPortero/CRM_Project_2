@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @Entity
 public class Employee {
  
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	/*@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)*/
+	@Id	
 	private Long id;
 		
 	@Column
@@ -25,70 +26,56 @@ public class Employee {
 	private String surname; 
 	
 	@Column
-	private String position;
+    private String position;
 	
-	@Column 
+	/*
+	@Column
 	private String userlogin;
 	
-	@Column
+	@Column 
 	private String pass;
-	
+	*/
+
 	public Long getId() {
 		return id;
 	}
 
-	public void setId(Long idp) {
-		id = idp;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getDni() {
 		return dni;
 	}
-	public void setDni(String dni1) {
-		dni=dni1; 
+
+	public void setDni(String dni) {
+		this.dni = dni;
 	}
-	
-	public String getNombre() {
+
+	public String getName() {
 		return name;
 	}
 
-	public void setNombre(String nombre) {
-		name = nombre;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getApellido() {
+	public String getSurname() {
 		return surname;
 	}
 
-	public void setApellido(String apellido) {
-		surname = apellido;
+	public void setSurname(String surname) {
+		this.surname = surname;
 	}
 
-	public String getCargo() {
+	public String getPosition() {
 		return position;
 	}
 
-	public void setCargo(String cargo) {
-		position = cargo;
+	public void setPosition(String position) {
+		this.position = position;
 	}
 
-	public String getUserLogin() {
-		return userlogin;
-	}
 
-	public void setUserLogin(String userLogin) {
-		userlogin = userLogin;
-	}
 
-	public String getPass() {
-		return pass;
-	}
-
-	public void setPass(String pass1) {
-		pass = pass1;
-	}
-
-	
-	
-	
 }

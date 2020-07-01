@@ -20,7 +20,7 @@ RequestMethod.POST,RequestMethod.TRACE
 })*/
 @CrossOrigin("*")
 @RestController
-@RequestMapping(value="/api/v1/")
+
 
 
 @Controller
@@ -42,9 +42,9 @@ public class EmployeeController {
  @GetMapping("/save/{id}")
  public String showSave(@PathVariable("id") Long id, Model model) {
 	 if(id != null) {
-		 model.addAttribute("empleado", empleadoServiceAPI.get(id));
+		 model.addAttribute("employee", empleadoServiceAPI.get(id));
 	 }else {
-		 model.addAttribute("empleado", new Employee());
+		 model.addAttribute("employee", new Employee());
 	 }
 	 return "save"; 
 	 
@@ -52,13 +52,17 @@ public class EmployeeController {
  
  @PostMapping("/save")
  public String save(Employee empleado, Model model) {
-	 if(empleado.getId()==null) {
-		 long idp= (long)Math.floor(Math.random()*1000);
-		 empleado.setId(idp);
+	 System.out.print("El modelo es "+model);
+	 System.out.print("El employee es "+empleado);
+	 try {
+		 empleadoServiceAPI.save(empleado);
+		 return "redirect:/";
+		 
+	 }catch(Exception e) {
+		 System.out.print(e);
+		 return null;
 	 }
-	 empleadoServiceAPI.save(empleado);
-	 return "redirect:/";
-	 
+	
  }
  
  @GetMapping("/delete/{id}")
